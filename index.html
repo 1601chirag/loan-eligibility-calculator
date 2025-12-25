@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Eligibility Calculator | Check Loan Eligibility Online</title>
+  <meta name="description" content="Free loan eligibility calculator to estimate how much loan you can afford based on your monthly income. Useful for home, car, and personal loans in India.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+  <h1>Loan Eligibility Calculator</h1>
+
+  <p>
+    This loan eligibility calculator helps you estimate how much loan you may be eligible for
+    based on your monthly income and EMI affordability.
+  </p>
+
+  <p>
+    Banks and lenders usually allow a certain percentage of your monthly income
+    to be used for loan repayment. This calculator gives a quick estimate.
+  </p>
+
+  <hr>
+
+  <!-- Calculator Section -->
+  <h2>Check Your Loan Eligibility</h2>
+
+  <label>Monthly Income (₹)</label><br>
+  <input type="number" id="income" placeholder="Enter monthly income"><br><br>
+
+  <label>EMI Affordability (%)</label><br>
+  <input type="number" id="ratio" value="40" placeholder="Default 40%"><br><br>
+
+  <button onclick="calcEligibility()">Calculate Eligibility</button>
+
+  <p id="result"></p>
+
+  <hr>
+
+  <h2>How Loan Eligibility is Calculated</h2>
+
+  <p>
+    Loan eligibility is usually calculated as a percentage of your monthly income.
+    Most banks allow 30% to 50% of your income to be used as EMI.
+  </p>
+
+  <p>
+    <strong>
+      Eligible EMI = Monthly Income × Eligibility Percentage
+    </strong>
+  </p>
+
+  <h2>Example of Loan Eligibility Calculation</h2>
+
+  <p>
+    If your monthly income is ₹50,000 and the EMI affordability is 40%,
+    then your eligible EMI will be:
+  </p>
+
+  <p>
+    Eligible EMI = 50,000 × 40% = ₹20,000
+  </p>
+
+  <h2>Who Should Use This Loan Eligibility Calculator</h2>
+
+  <ul>
+    <li>People planning to take a home loan</li>
+    <li>Car and personal loan applicants</li>
+    <li>Anyone checking loan affordability</li>
+  </ul>
+
+  <!-- Calculator Logic -->
+  <script>
+    function calcEligibility() {
+      var income = document.getElementById("income").value;
+      var ratio = document.getElementById("ratio").value / 100;
+
+      var eligibleEmi = income * ratio;
+
+      document.getElementById("result").innerHTML =
+        "Estimated Eligible EMI = ₹" + eligibleEmi.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
